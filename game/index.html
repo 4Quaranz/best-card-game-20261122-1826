@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Pact — Duel of the Last Flame</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div id="turn-banner">EMBER PACT</div>
+    <div id="round-label">Round 1</div>
+  </header>
+
+  <section id="enemy-zone" aria-label="Opponent area">
+    <div class="hero-box enemy">
+      <div class="hero-name">ASHEN WARDEN</div>
+      <div class="hp-bar"><div class="hp-fill enemy-hp" id="enemy-hp-fill"></div><span class="hp-text" id="enemy-hp-text"></span></div>
+      <div class="mana-row" id="enemy-mana"></div>
+    </div>
+    <div id="enemy-hand" class="hand-row"></div>
+    <div id="enemy-board" class="board-row"></div>
+  </section>
+
+  <section id="midline">
+    <div id="log" aria-live="polite"></div>
+    <button id="end-turn" type="button">End Turn</button>
+  </section>
+
+  <section id="player-zone" aria-label="Player area">
+    <div id="player-board" class="board-row"></div>
+    <div id="player-hand" class="hand-row"></div>
+    <div class="hero-box player">
+      <div class="hero-name">YOU — KEEPER OF EMBERS</div>
+      <div class="hp-bar"><div class="hp-fill player-hp" id="player-hp-fill"></div><span class="hp-text" id="player-hp-text"></span></div>
+      <div class="mana-row" id="player-mana"></div>
+    </div>
+  </section>
+
+  <div id="title-screen" class="overlay">
+    <div class="title-card">
+      <h1>EMBER PACT</h1>
+      <p class="tagline">Duel of the Last Flame</p>
+      <p class="rules-blurb">Two keepers. One flame. Play ember creatures, cast fire spells,
+        and burn the Ashen Warden's flame to zero before yours goes out.</p>
+      <div class="title-cards">
+        <div class="mini-card"><span class="mini-cost">5</span><span class="mini-name">Pyre Drake</span><span class="mini-stats">5 / 5</span></div>
+        <div class="mini-card"><span class="mini-cost">2</span><span class="mini-name">Firebolt</span><span class="mini-stats">Deal 3</span></div>
+        <div class="mini-card"><span class="mini-cost">3</span><span class="mini-name">Flame Warden</span><span class="mini-stats">3 / 4</span></div>
+      </div>
+      <button id="start-btn" type="button">Begin the Duel</button>
+      <p class="hint">Click a card, then click a target. Keyboard: 1–7 play hand cards, Space ends turn, Enter starts.</p>
+      <p class="hint">Fully offline — no network, no account, just the duel.</p>
+    </div>
+  </div>
+
+  <div id="end-screen" class="overlay hidden">
+    <div class="title-card">
+      <h1 id="end-title">VICTORY</h1>
+      <p class="tagline" id="end-sub">The flame endures.</p>
+      <p class="rules-blurb" id="end-detail"></p>
+      <button id="again-btn" type="button">Duel Again</button>
+      <p class="hint">Press Enter to play again.</p>
+    </div>
+  </div>
+</div>
+<script src="src/cards.js"></script>
+<script src="src/engine.js"></script>
+<script src="src/render.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
